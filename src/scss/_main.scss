@@ -1,0 +1,119 @@
+%in {
+	width: 1030px;
+	margin: 0 auto;
+}
+
+@include font-face("DINPro", "/fonts/DINPro-Bold", $file-formats: ttf);
+@include font-face("DINProLight", "/fonts/DINPro-Light", $file-formats: ttf svg woff otf);
+@include font-face("DINProMedium", "/fonts/DINPro-Medium", $file-formats: ttf svg woff otf);
+
+.clearfix {
+	@include clearfix;
+}
+
+
+.fixedtop {
+	position: fixed;
+	top: -20px;
+	left:0;
+	right: 0;
+	z-index: 1000;
+	bottom: 0;
+	
+
+	&__in {
+		@extend %in;
+		height: 90px;
+		margin: 0 auto;
+	}
+
+	&__top {
+		
+	}
+
+	&__l {
+		width: 15px;
+		height: 74px;
+		background: url("/img/menu-left.png") no-repeat;
+		float: left;
+	}
+
+	&__c {
+		width: 1000px;
+		height: 74px;
+		background: url("/img/menu-pattern.png") repeat;
+		float: left;
+	}
+
+	&__r {
+		width: 15px;
+		height: 74px;
+		background: url("/img/menu-right.png") no-repeat;
+		float: left;
+	}
+
+	&__b {
+		height: 16px;
+		width: 1030px;
+		background: url("/img/menu-bottom.png") no-repeat;
+	}
+
+	.mainnav {
+		float: left;
+		margin-top: 20px;
+		
+		ul {
+			margin-top: 23px;
+			margin-left:71px;
+			list-style: none;
+		}
+
+		li {
+			display: inline-block;
+			margin-right: 30px;
+			&:last-child {
+				margin-right: 0;
+			}
+		
+		}
+
+
+		a {
+			text-transform: uppercase;
+			font-size: 14px;
+			font-family: "DINPro";
+			font-weight: 600;
+			color: #363636;
+
+			&.is-active, &:hover, &:active {
+				color: #c72a2a;
+				text-decoration: none;
+			}
+
+		}
+
+
+	}
+
+	.meta {
+		float: right;
+		margin-top: 44px;
+		margin-right: 60px;
+		font-size: 11px;
+		font-family: "DINProLight";
+
+		&__tel {
+			display: inline-block;
+			margin-right: 22px;
+			color: #363636;
+		}
+
+		&__email {
+			display: inline-block;
+			a {
+				color: #363636;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,185 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fixedtop__in {
+  width: 1030px;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: "DINPro";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/DINPro-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DINProLight";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/DINPro-Light.woff") format("woff"), url("/fonts/DINPro-Light.ttf") format("truetype"), url("/fonts/DINPro-Light.svg#DINProLight") format("svg");
+}
+
+@font-face {
+  font-family: "DINProMedium";
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/DINPro-Medium.woff") format("woff"), url("/fonts/DINPro-Medium.ttf") format("truetype"), url("/fonts/DINPro-Medium.svg#DINProMedium") format("svg");
+}
+
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.fixedtop {
+  position: fixed;
+  top: -20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  bottom: 0;
+}
+
+.fixedtop__in {
+  height: 90px;
+  margin: 0 auto;
+}
+
+.fixedtop__l {
+  width: 15px;
+  height: 74px;
+  background: url("/img/menu-left.png") no-repeat;
+  float: left;
+}
+
+.fixedtop__c {
+  width: 1000px;
+  height: 74px;
+  background: url("/img/menu-pattern.png") repeat;
+  float: left;
+}
+
+.fixedtop__r {
+  width: 15px;
+  height: 74px;
+  background: url("/img/menu-right.png") no-repeat;
+  float: left;
+}
+
+.fixedtop__b {
+  height: 16px;
+  width: 1030px;
+  background: url("/img/menu-bottom.png") no-repeat;
+}
+
+.fixedtop .mainnav {
+  float: left;
+  margin-top: 20px;
+}
+
+.fixedtop .mainnav ul {
+  margin-top: 23px;
+  margin-left: 71px;
+  list-style: none;
+}
+
+.fixedtop .mainnav li {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.fixedtop .mainnav li:last-child {
+  margin-right: 0;
+}
+
+.fixedtop .mainnav a {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: "DINPro";
+  font-weight: 600;
+  color: #363636;
+}
+
+.fixedtop .mainnav a.is-active, .fixedtop .mainnav a:hover, .fixedtop .mainnav a:active {
+  color: #c72a2a;
+  text-decoration: none;
+}
+
+.fixedtop .meta {
+  float: right;
+  margin-top: 44px;
+  margin-right: 60px;
+  font-size: 11px;
+  font-family: "DINProLight";
+}
+
+.fixedtop .meta__tel {
+  display: inline-block;
+  margin-right: 22px;
+  color: #363636;
+}
+
+.fixedtop .meta__email {
+  display: inline-block;
+}
+
+.fixedtop .meta__email a {
+  color: #363636;
+}
