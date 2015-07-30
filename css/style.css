@@ -83,6 +83,10 @@ table {
   src: url("../fonts/DINPro-Medium.woff") format("woff"), url("../fonts/DINPro-Medium.ttf") format("truetype"), url("../fonts/DINPro-Medium.svg#DINProMedium") format("svg");
 }
 
+* {
+  transition: all 0.5s ease-in-out;
+}
+
 .clearfix::after {
   clear: both;
   content: "";
@@ -96,6 +100,7 @@ table {
   right: 0;
   z-index: 1000;
   bottom: 0;
+  height: 90px;
 }
 
 .fixedtop__in {
@@ -262,10 +267,15 @@ table {
 
 .container .carousel__pagin-button {
   display: inline-block;
-  border-radius: 50%;
   height: 13px;
   width: 13px;
-  background: #bfbfbf;
+  background: url("../img/dot.png") no-repeat;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.container .carousel__pagin-button:hover, .container .carousel__pagin-button:active, .container .carousel__pagin-button.is-active {
+  background: url("../img/dot-hover.png") no-repeat;
 }
 
 .container .carousel__box {
@@ -336,6 +346,7 @@ table {
 
 .container .carousel .item__title {
   font-size: 21px;
+  line-height: 22px;
   font-family: "DINPro";
   color: #1c1c1c;
   text-transform: uppercase;
@@ -350,14 +361,93 @@ table {
   font-style: italic;
   margin-top: 16px;
   margin-left: 5px;
+  line-height: 16px;
 }
 
 hr {
   width: 870px;
-  margin: 20px auto;
+  margin: 21px auto;
   display: block;
   height: 1px;
   border: 0;
   border-top: 1px solid #dedede;
   padding: 0;
+}
+
+.btn {
+  position: relative;
+  left: 50%;
+  width: 240px;
+  -webkit-transform: translateX(-48%);
+  -ms-transform: translateX(-48%);
+  transform: translateX(-48%);
+}
+
+.calltoaction {
+  position: relative;
+}
+
+.calltoaction .btn-action {
+  display: inline-block;
+  background: url("../img/btn-c.png") repeat-x;
+  height: 67px;
+  width: 211px;
+}
+
+.calltoaction .btn-action:before {
+  display: inline-block;
+  content: " ";
+  background: url("../img/btn-left.png") no-repeat;
+  height: 67px;
+  width: 15px;
+  -webkit-transform: translateX(-15px);
+  -ms-transform: translateX(-15px);
+  transform: translateX(-15px);
+}
+
+.calltoaction .btn-action:after {
+  display: inline-block;
+  content: " ";
+  background: url("../img/btn-right.png") no-repeat;
+  height: 67px;
+  width: 15px;
+  -webkit-transform: translateX(196px);
+  -ms-transform: translateX(196px);
+  transform: translateX(196px);
+}
+
+.calltoaction .btn-action .btn-text {
+  text-shadow: 0 3px 0 #9a0507;
+  line-height: 67px;
+  text-align: center;
+  color: #fafafa;
+  font-family: "DINPro";
+  font-size: 22px;
+  text-transform: uppercase;
+  position: absolute;
+  top: -3px;
+}
+
+.calltoaction .arrow {
+  position: absolute;
+  background: url("../img/arrow.png") no-repeat;
+  width: 38px;
+  height: 24px;
+  top: 0;
+  right: 290px;
+}
+
+.calltoaction__info {
+  position: absolute;
+  width: 250px;
+  right: 25px;
+  top: 10px;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 13px;
+  font-family: 'PT Serif', serif;
+}
+
+.calltoaction__info span {
+  color: #ff0000;
 }

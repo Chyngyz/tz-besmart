@@ -8,6 +8,9 @@
 @include font-face("DINProMedium", "../fonts/DINPro-Medium", $file-formats: ttf otf svg woff);
 @import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic);
 
+* {
+	@include transition(all 0.5s ease-in-out);
+}
 
 .clearfix {
 	@include clearfix;
@@ -21,6 +24,7 @@
 	right: 0;
 	z-index: 1000;
 	bottom: 0;
+	height: 90px;
 	
 
 	&__in {
@@ -199,10 +203,15 @@
 
 			&-button {
 				display: inline-block;
-				border-radius: 50%;
 				height: 13px;
 				width: 13px;
-				background: #bfbfbf;
+				background: url("../img/dot.png") no-repeat;
+				cursor: pointer;
+				@include transition(background 0.2s ease-in-out);
+
+				&:hover, &:active, &.is-active {
+					background: url("../img/dot-hover.png") no-repeat;
+				}
 			}
 		}
 
@@ -275,6 +284,7 @@
 
 			&__title {
 				font-size: 21px;
+				line-height: 22px;
 				font-family: "DINPro";
 				color: #1c1c1c;
 				text-transform: uppercase;
@@ -288,6 +298,7 @@
 				font-style: italic;
 				margin-top: 16px;
 				margin-left: 5px;
+				line-height: 16px;
 			}
 		}
 	}
@@ -295,10 +306,92 @@
 
 hr {
 	width: 870px;
-	margin: 20px auto;
+	margin: 21px auto;
 	display: block;
 	height: 1px;
     border: 0;
     border-top: 1px solid #dedede;
     padding: 0;
 }
+
+.btn {
+	position: relative;
+	left: 50%;
+	width: 240px;
+	-webkit-transform: translateX(-48%);
+	-ms-transform: translateX(-48%);
+	-o-transform: translateX(-48%);
+	transform: translateX(-48%);
+}
+
+.calltoaction {
+	position: relative;
+
+	.btn-action {
+		display: inline-block;
+		background: url("../img/btn-c.png") repeat-x;
+		height: 67px;
+		width: 211px;
+
+		&:before {
+			display: inline-block;
+			content: " ";
+			background: url("../img/btn-left.png") no-repeat;
+			height: 67px;
+			width: 15px;
+			-webkit-transform: translateX(-15px);
+			-ms-transform: translateX(-15px);
+			-o-transform: translateX(-15px);
+			transform: translateX(-15px);
+		}
+
+		&:after {
+			display: inline-block;
+			content: " ";
+			background: url("../img/btn-right.png") no-repeat;
+			height: 67px;
+			width: 15px;
+			-webkit-transform: translateX(196px);
+			-ms-transform: translateX(196px);
+			-o-transform: translateX(196px);
+			transform: translateX(196px);
+		}
+
+		.btn-text {
+			text-shadow: 0 3px 0 #9a0507;
+			line-height: 67px;
+			text-align: center;
+			color: #fafafa;
+			font-family: "DINPro";
+			font-size: 22px;
+			text-transform: uppercase;
+			position: absolute;
+			top:-3px;
+		}
+	}
+	.arrow {
+		position: absolute;
+		background: url("../img/arrow.png") no-repeat;
+		width: 38px;
+		height: 24px;
+		top:0;
+		right: 290px;
+
+	}
+
+	&__info {
+		position: absolute;
+		width: 250px;
+		right: 25px;
+		top: 10px;
+		font-size: 12px;
+		font-style: italic;
+		line-height: 13px;
+		font-family: 'PT Serif', serif;
+
+		span {
+			color: #ff0000;
+		}
+	}
+}
+
