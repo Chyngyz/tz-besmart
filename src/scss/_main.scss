@@ -3,9 +3,11 @@
 	margin: 0 auto;
 }
 
-@include font-face("DINPro", "/fonts/DINPro-Bold", $file-formats: ttf);
-@include font-face("DINProLight", "/fonts/DINPro-Light", $file-formats: ttf svg woff otf);
-@include font-face("DINProMedium", "/fonts/DINPro-Medium", $file-formats: ttf svg woff otf);
+@include font-face("DINPro", "../fonts/DINPro-Bold", $file-formats: ttf);
+@include font-face("DINProLight", "../fonts/DINPro-Light", $file-formats: ttf otf svg);
+@include font-face("DINProMedium", "../fonts/DINPro-Medium", $file-formats: ttf otf svg woff);
+@import url(http://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic);
+
 
 .clearfix {
 	@include clearfix;
@@ -116,4 +118,187 @@
 		}
 	}
 
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	background: red;
+
+	&.home {
+		background: #fff;
+		background: url("../img/bg-home.jpg") no-repeat;
+		-webkit-background-size: cover;
+		background-size: cover;
+	}
+
+	&__in {
+		@extend %in;
+		position: relative;
+		height: 100%;
+	}
+
+	.wrapper {
+		position: absolute;
+		height: 570px;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%,-45%);
+  		transform: translate(-50%,-45%);
+  
+  
+		&__t {
+			width: 100%;
+			height: 30px;
+			background: url("../img/content-top.png") no-repeat;
+		}
+
+		&__l {
+			width: 15px;
+			height: 525px;
+			background: url("../img/content-left.png") no-repeat;
+			float: left;
+		}
+
+		&__c {
+			height: 525px;
+			width: 1000px;
+			background: #fff url("/img/menu-pattern.png") repeat;
+			float: left;
+			padding: 27px 59px 17px 63px;
+		}
+
+		&__r {
+			width: 15px;
+			height: 525px;
+			background: url("../img/content-right.png") no-repeat;
+			float: left;
+		}
+
+		&__b {
+			height: 15px;
+			width: 1030px;
+			background: url("/img/content-bottom.png") no-repeat;
+		}
+	}
+
+	.carousel {
+		
+		&__title {
+			font-size: 21px;
+			text-transform: uppercase;
+			font-family: "DINPro";
+			color: #ccc;
+			float: left;
+			margin-left: 7px;
+		}
+
+		&__pagin {
+			float: right;
+
+			&-button {
+				display: inline-block;
+				border-radius: 50%;
+				height: 13px;
+				width: 13px;
+				background: #bfbfbf;
+			}
+		}
+
+		&__box {
+			margin-top: 10px;
+		}
+
+		.item {
+			width: 187px;
+			float: left;
+			margin-right: 39px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&__img {
+				height: 192px;
+				width: 192px;
+				background: url("../img/img-frame.png") no-repeat;
+				position: relative;
+
+				img {
+					width: 179px;
+					height: 179px;
+					position: absolute;
+					top: 7px;
+					left: 7px;
+
+				}
+
+				.badge {
+					position: absolute;
+					z-index: 5;
+
+				}
+
+				.badge-1 {
+					width: 51px;
+				    height: 20px;
+				    left: 63px;
+				    top: -4px;
+				    background: url(../img/badge-1.png) no-repeat;
+				}
+
+				.badge-2 {
+					width: 54px;
+				    height: 34px;
+				    left: 63px;
+				    top: -15px;
+				    background: url(../img/badge-2.png) no-repeat;
+				}
+
+				.badge-3 {
+					width: 51px;
+				    height: 39px;
+				    left: 63px;
+				    top: -10px;
+				    background: url(../img/badge-3.png) no-repeat;
+				}
+
+				.badge-4 {
+					width: 51px;
+				    height: 20px;
+				    left: 36px;
+				    top: -4px;
+				    background: url(../img/badge-4.png) no-repeat;
+				}
+			}
+
+			&__title {
+				font-size: 21px;
+				font-family: "DINPro";
+				color: #1c1c1c;
+				text-transform: uppercase;
+				margin-top: 10px;
+				margin-left: 5px;
+			}
+			&__text {
+				font-size: 14px;
+				color: #1c1c1c;
+				font-family: 'PT Serif', serif;
+				font-style: italic;
+				margin-top: 16px;
+				margin-left: 5px;
+			}
+		}
+	}
+}
+
+hr {
+	width: 870px;
+	margin: 20px auto;
+	display: block;
+	height: 1px;
+    border: 0;
+    border-top: 1px solid #dedede;
+    padding: 0;
 }
