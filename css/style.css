@@ -297,7 +297,9 @@ table {
 }
 
 .container .carousel__box {
-  margin-top: 10px;
+  margin: 10px auto 0;
+  width: 33.33%;
+  float: left;
 }
 
 .container .carousel .item {
@@ -385,6 +387,29 @@ table {
   margin-top: 16px;
   margin-left: 5px;
   line-height: 16px;
+}
+
+.carousel__wrapper {
+  width: 880px;
+  overflow: hidden;
+}
+
+.carousel__wrapper__in {
+  width: 300%;
+  position: relative;
+  left: 0;
+}
+
+.slide-active-1 .carousel__wrapper__in {
+  left: 0px;
+}
+
+.slide-active-2 .carousel__wrapper__in {
+  left: -100%;
+}
+
+.slide-active-3 .carousel__wrapper__in {
+  left: -200%;
 }
 
 hr {

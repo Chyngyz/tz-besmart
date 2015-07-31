@@ -120,7 +120,7 @@ gulp.task('clean', ['clean-sass', 'clean-scripts']);
 // Default task
 gulp.task('default', ['sass', 'browser-sync', 'scripts', 'images'], function() {
     gulp.watch(paths.scss, ['sass']);
-    gulp.watch(paths.js, ['scripts']);
+    gulp.watch(paths.jsSrc, ['scripts']);
     gulp.watch(paths.img, ['images']);
     gulp.watch(['./*.html'], ['bs-reload']);
 });
