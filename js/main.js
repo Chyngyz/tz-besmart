@@ -31,5 +31,47 @@
 			}
 	}
 
+	var galleryItem = $.find('.gallery__item');
+	var close = $.find('.close');
+	var modal = $.find('.modal');
+
+	$(close).click(function () {
+		$(modal).hide();
+	})
+
+	for (var i = galleryItem.length - 1; i >= 0; i--) {
+		$(galleryItem[i]).click(function () {
+			$(modal).show();
+		});
+		
+	};
+
+	$(document).ready(function() {
+		if ($(window).height() > 800){
+			$('.gallery__box').css('height', '668px');
+		}
+	});
+
+	var x = 0;
+	$('.prev').click(function () {
+		if (x == 0) {
+			return;
+		} else {
+			$('.gallery__in').css('left', '0');
+			x = 0;
+		}
+	});
+	$('.next').click(function () {
+		if (x == 1) {
+			return;
+		} else {
+			$('.gallery__in').css('left', '-100%');
+			x = 1;
+		}
+	});
+
+	
+
 	
 }(jQuery));
+

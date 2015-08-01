@@ -26,7 +26,7 @@
 	top: -20px;
 	left:0;
 	right: 0;
-	z-index: 1000;
+	z-index: 10;
 	bottom: 0;
 	height: 90px;
 	
@@ -503,9 +503,36 @@ hr {
 	-ms-transform: translate(-50%,-50%);
 	-o-transform: translate(-50%,-50%);
 	transform: translate(-50%,-50%);
-	z-index: 5;
+	z-index: 6;
 	width: 1000px;
 	max-height: 668px;
+	overflow: hidden;
+
+	&__in {
+		width: 200%;
+		position: relative;
+		left: 0;
+	}
+
+	&__box {
+		width: 50%;
+		height: 500px;
+		overflow: hidden;
+		float: left;
+
+	}
+
+	&__shadow {
+		@extend %sprite;
+		background-position: -35px -438px;
+		width: 886px;
+		height: 66px;
+	    position: absolute;
+	    bottom: 0;
+	    z-index: 5;
+	    left: 50%;
+	    transform: translateX(-50%);
+	}
 
 	&__item {
 		float: left;
@@ -514,9 +541,16 @@ hr {
 		position: relative;
 		margin: 0 1px 1px 0;
 		overflow: hidden;
+		cursor: pointer;
 
 		&:nth-child(5) {
 			margin-right: 0;
+		}
+
+		&:hover {
+			.item__text {
+				top: 0;
+			}
 		}
 
 	}
@@ -528,18 +562,13 @@ hr {
 			left: 0;
 			background: #fff;
 			height: 101%;
-			cursor: pointer;
 			text-align: center;
 			-webkit-transition: top 0.3s ease-in-out;
 			-o-transition: top 0.3s ease-in-out;
 			transition: top 0.3s ease-in-out;
 		}
 
-		&:hover {
-			.item__text {
-				top: 0;
-			}
-		}
+		
 
 		&__title {
 			display: block;
@@ -562,5 +591,159 @@ hr {
 		}
 	}
 
+}
 
+.folio__nav {
+	position: absolute;
+	top:50%;
+	height: 56px;
+	z-index: 5;
+	width: 100%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+
+	.prev {
+		height: 56px;
+		width: 56px;
+		@extend %sprite;
+		background-position: -112px -526px;
+		float: left;
+		cursor: pointer;
+		margin-left: 70px;
+	}
+
+	.next {
+		height: 56px;
+		width: 56px;
+		@extend %sprite;
+		background-position: -181px -526px;
+		float: right;
+		cursor:pointer;
+		margin-right: 70px;
+	}
+}
+
+.modal {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(255, 255, 255, 0.5);
+	top:0;
+	left:0;
+	z-index: 20;
+	display:none;
+
+	&__wrapper {
+		position: relative;
+		top:50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		width: 100%;
+		background: #fff;
+		height: 536px;
+		width: 100%;
+		border-top: 1px solid #ddd;
+		border-bottom: 1px solid #ddd;
+	}
+
+	&__wrapper-in {
+		@extend %in;
+		position: relative;
+	}
+
+	.left {
+		margin-top: 8px;
+		margin-right: 22px;
+		display: inline-block;
+		vertical-align: top;
+
+		.meta {
+			
+
+			&__title {
+				float: left;
+				font-family: "PT Serif";
+				font-size: 12px;
+				font-style: italic;
+				line-height: 13px;
+				margin-top: 7px;
+			}
+
+			.nav {
+				float: right;
+
+				.next {
+					width: 23px;
+					height: 23px;
+					@extend %sprite;
+					background-position: -354px -526px;
+					background-repeat: no-repeat;
+					display: inline-block;
+					margin-top: 7px;
+					cursor: pointer;
+				}
+
+				.prev {
+					width: 23px;
+					height: 23px;
+					@extend %sprite;
+					background-position: -384px -526px;
+					background-repeat: no-repeat;
+					margin-top: 7px;
+					margin-right: 8px;
+					display: inline-block;
+					cursor: pointer;
+				}
+			}
+		}
+
+	}
+
+	.right {
+		margin-top: 8px;
+		display: inline-block;
+		vertical-align: top;
+		width: 360px;
+
+		.title {
+			font-family: "DINPro";
+			font-size: 14px;
+			text-transform: uppercase;
+			line-height: 19px;
+		}
+
+		.title-type {
+			margin-top: 3px;
+			font-family: "PT Serif";
+			font-style: italic;
+			font-size: 12px;
+			line-height: 13px;
+		}
+
+		p {
+			margin-top: 13px;
+			font-family: "PT Serif";
+			font-size: 13px;
+			font-style: italic;
+			line-height: 26px;
+			color: #565658;
+			
+		}
+	}
+
+	.close {
+		width: 17px;
+		height: 17px;
+		margin-top: 23px;
+		margin-right: 23px;
+		@extend %sprite;
+		background-position: -325px -526px;
+		float: right;
+		cursor: pointer;
+
+	}
 }
