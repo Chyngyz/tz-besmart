@@ -99,7 +99,7 @@ table {
 
 .fixedtop {
   position: fixed;
-  top: -20px;
+  top: -90px;
   left: 0;
   right: 0;
   z-index: 10;
@@ -209,6 +209,7 @@ table {
   background: #fff;
   background: url("../img/bg-home.jpg") no-repeat;
   background-size: cover;
+  opacity: 0;
 }
 
 .container.folio {
@@ -224,11 +225,12 @@ table {
   position: absolute;
   height: 570px;
   width: 100%;
-  top: 50%;
+  top: 55%;
   left: 50%;
   -webkit-transform: translate(-50%, -45%);
   -ms-transform: translate(-50%, -45%);
       transform: translate(-50%, -45%);
+  opacity: 0;
 }
 
 .container .wrapper__t {
@@ -528,6 +530,7 @@ hr {
   width: 1000px;
   max-height: 668px;
   overflow: hidden;
+  opacity: 0;
 }
 
 .gallery__in {
@@ -619,7 +622,8 @@ hr {
   background-position: -112px -526px;
   float: left;
   cursor: pointer;
-  margin-left: 70px;
+  margin-left: 10px;
+  opacity: 0;
 }
 
 .folio__nav .next {
@@ -628,18 +632,28 @@ hr {
   background-position: -181px -526px;
   float: right;
   cursor: pointer;
-  margin-right: 70px;
+  margin-right: 10px;
+  opacity: 0;
 }
 
 .modal {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.5);
   top: 0;
   left: 0;
   z-index: 20;
   display: none;
+}
+
+.modal__bg {
+  background: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 8;
+  opacity: 0;
 }
 
 .modal__wrapper {
@@ -650,14 +664,16 @@ hr {
   transform: translateY(-50%);
   width: 100%;
   background: #fff;
-  height: 536px;
+  height: 0px;
   width: 100%;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
+  z-index: 20;
 }
 
 .modal__wrapper-in {
   position: relative;
+  opacity: 0;
 }
 
 .modal .left {
@@ -740,4 +756,31 @@ hr {
   background-position: -325px -526px;
   float: right;
   cursor: pointer;
+}
+
+.modal .thumb-box {
+  position: absolute;
+  bottom: 31px;
+  height: 199px;
+  width: 337px;
+  right: 50px;
+}
+
+.modal .thumb-box .thumb {
+  width: 100%;
+  margin-bottom: 11px;
+  height: 58px;
+}
+
+.modal .thumb-box .thumb:last-child {
+  margin-bottom: 0;
+}
+
+.modal .thumb-box .thumb img {
+  float: left;
+  margin-right: 11px;
+}
+
+.modal .thumb-box .thumb img:last-child {
+  margin-right: 0;
 }

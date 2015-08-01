@@ -21,7 +21,7 @@ var paths = {
     jsSrc: ['./src/js/*.js', '!./src/js/vendor/*.js'],
     jsProd: './js/**/*.js',
     jsVendor: './src/js/vendor/*.js',
-    img: './src/img/*'
+    img: './src/img/**/*'
 };
 
 // Clean css
