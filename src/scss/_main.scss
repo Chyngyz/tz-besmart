@@ -607,7 +607,7 @@ hr {
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
 
-	.prev {
+	.prevBtn {
 		height: 56px;
 		width: 56px;
 		@extend %sprite;
@@ -618,7 +618,7 @@ hr {
 		opacity: 0;
 	}
 
-	.next {
+	.nextBtn {
 		height: 56px;
 		width: 56px;
 		@extend %sprite;
@@ -792,4 +792,23 @@ hr {
 			}
 		}
 	}
+
+	.img__wrapper {
+		width: 617px;
+		height: 434px;
+		overflow: hidden;
+
+		&-box {
+			width: 300%;
+			position: relative;
+			height: 100%;
+			left:0;
+		}
+
+		img {
+			width: 33.33%;
+			float: left;
+		}
+	}
+
 }

@@ -18,11 +18,11 @@
 			$('.gallery').animate({
 				opacity: 1
 			}, 500);
-			$('.folio__nav .prev').animate({
+			$('.folio__nav .prevBtn').animate({
 				'margin-left' : '70px', 
 				'opacity': 1
 			},300);
-			$('.folio__nav .next').animate({
+			$('.folio__nav .nextBtn').animate({
 				'margin-right' : '70px', 
 				'opacity': 1
 			},300);
@@ -113,7 +113,7 @@
 
 	// Slide folio works
 	var x = 0;
-	$('.prev').click(function () {
+	$('.prevBtn').click(function () {
 		if (x == 0) {
 			return;
 		} else {
@@ -121,7 +121,7 @@
 			x = 0;
 		}
 	});
-	$('.next').click(function () {
+	$('.nextBtn').click(function () {
 		if (x == 1) {
 			return;
 		} else {
@@ -148,6 +148,33 @@
 	    }
 
 	  });
+	});
+
+	// Modal nav
+	var activeSlide = 0;
+	var slide = $('.modal .img__wrapper-box');
+	$('.modal .nav .prev').click(function () {
+		if(activeSlide == 0) {
+			return;
+		} else if(activeSlide == 1) {
+			slide.css('left', 0);
+			activeSlide--;
+		} else {
+			slide.css('left', '-100%');
+			activeSlide--;
+		}
+	});
+	$('.modal .nav .next').click(function () {
+		if(activeSlide == 0) {
+			slide.css('left', '-100%');
+			activeSlide++;
+		} else if(activeSlide == 1){
+			slide.css('left','-200%');
+			activeSlide++;
+		} else {
+			return;
+			activeSlide
+		}
 	});
 	
 }(jQuery));
